@@ -7,5 +7,10 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "paths": {
+      "vuex": ["./node_modules/vuex/types/index.d.ts"]
+    }
+  }
 }

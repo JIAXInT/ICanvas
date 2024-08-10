@@ -189,6 +189,13 @@
   resolved "https://registry.npmmirror.com/@types/estree/-/estree-1.0.5.tgz"
   integrity sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==
 
+"@types/node@^18.0.0 || >=20.0.0", "@types/node@^22.1.0":
+  version "22.1.0"
+  resolved "https://registry.npmmirror.com/@types/node/-/node-22.1.0.tgz"
+  integrity sha512-AOmuRF0R2/5j1knA3c6G3HOk523Ga+l+ZXltX8SF1+5oqcXijjfTd8fY3XRZqSihEu9XhtQnKYLmkFaoxgsJHw==
+  dependencies:
+    undici-types "~6.13.0"
+
 "@vitejs/plugin-vue@^5.0.5":
   version "5.1.2"
   resolved "https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-5.1.2.tgz"
@@ -264,6 +271,11 @@
   dependencies:
     de-indent "^1.0.2"
     he "^1.2.0"
+
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.6.3":
+  version "6.6.3"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.6.3.tgz"
+  integrity sha512-0MiMsFma/HqA6g3KLKn+AGpL1kgKhFWszC9U29NfpWK5LE7bjeXxySWJrOJ77hBz+TBrBQ7o4QJqbPbqbs8rJw==
 
 "@vue/language-core@2.0.29":
   version "2.0.29"
@@ -1251,6 +1263,11 @@ ufo@^1.5.3:
   resolved "https://registry.npmmirror.com/ufo/-/ufo-1.5.4.tgz"
   integrity sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==
 
+undici-types@~6.13.0:
+  version "6.13.0"
+  resolved "https://registry.npmmirror.com/undici-types/-/undici-types-6.13.0.tgz"
+  integrity sha512-xtFJHudx8S2DSoujjMd1WeWvn7KKWFRESZTMeL1RptAYERu29D6jphMjjY+vn96jvN3kVPDNxU/E13VTaXj6jg==
+
 unplugin-vue-components@^0.27.3:
   version "0.27.3"
   resolved "https://registry.npmmirror.com/unplugin-vue-components/-/unplugin-vue-components-0.27.3.tgz"
@@ -1300,6 +1317,13 @@ vscode-uri@^3.0.8:
   resolved "https://registry.npmmirror.com/vscode-uri/-/vscode-uri-3.0.8.tgz"
   integrity sha512-AyFQ0EVmsOZOlAnxoFOGOq1SQDWAB7C6aqMGS23svWAllfOaxbuFvcT8D1i8z3Gyn8fraVeZNNmN6e9bxxXkKw==
 
+vue-router@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.npmmirror.com/vue-router/-/vue-router-4.4.2.tgz"
+  integrity sha512-1qNybkn2L7QsLzaXs8nvlQmRKp8XF8DCxZys/Jr1JpQcHsKUxTKzTxCVA1G7NfBfwRIBgCJPoujOG5lHCCNUxw==
+  dependencies:
+    "@vue/devtools-api" "^6.6.3"
+
 vue-tsc@^2.0.24:
   version "2.0.29"
   resolved "https://registry.npmmirror.com/vue-tsc/-/vue-tsc-2.0.29.tgz"
@@ -1316,7 +1340,7 @@ vue-types@^3.0.0:
   dependencies:
     is-plain-object "3.0.1"
 
-vue@^3.0.0, vue@^3.2.25, vue@^3.4.31, vue@>=3.0.3, vue@>=3.2.0, "vue@2 || 3", vue@3.4.35:
+vue@^3.0.0, vue@^3.0.2, vue@^3.2.0, vue@^3.2.25, vue@^3.4.31, vue@>=3.0.3, vue@>=3.2.0, "vue@2 || 3", vue@3.4.35:
   version "3.4.35"
   resolved "https://registry.npmmirror.com/vue/-/vue-3.4.35.tgz"
   integrity sha512-+fl/GLmI4GPileHftVlCdB7fUL4aziPcqTudpTGXCT8s+iZWuOCeNEB5haX6Uz2IpRrbEXOgIFbe+XciCuGbNQ==
@@ -1326,6 +1350,13 @@ vue@^3.0.0, vue@^3.2.25, vue@^3.4.31, vue@>=3.0.3, vue@>=3.2.0, "vue@2 || 3", vu
     "@vue/runtime-dom" "3.4.35"
     "@vue/server-renderer" "3.4.35"
     "@vue/shared" "3.4.35"
+
+vuex@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmmirror.com/vuex/-/vuex-4.0.2.tgz"
+  integrity sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.11"
 
 warning@^4.0.0:
   version "4.0.3"
