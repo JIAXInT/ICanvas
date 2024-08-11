@@ -1,13 +1,20 @@
 <template>
   <div class="editor" id="editor-layout-main">
-    <a-layout>
+    <a-layout style="background: red; height: 85vh">
       <a-layout-sider width="300" style="background: yellow">
         <div class="sidebar-container">组件列表</div>
       </a-layout-sider>
       <a-layout style="padding: 0 24px 24px">
         <a-layout-content class="preview-container">
           <p>画布区域</p>
-          <div class="preview-list" id="canvas-area"></div>
+          <div class="preview-list" id="canvas-area">
+            <l-text
+              v-for="component in components"
+              :key="component.id"
+              :is="component.name"
+              v-bind="component.props"
+            ></l-text>
+          </div>
         </a-layout-content>
       </a-layout>
       <a-layout-sider
@@ -20,23 +27,24 @@
     </a-layout>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
+import { GlobalDataProps } from "../store";
+import LText from "../components/LText.vue";
 
-export default defineComponent({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setup() {},
-});
+const store = useStore<GlobalDataProps>();
+const components = computed(() => store.state.editor.components);
 </script>
 
 <style>
 .editor {
-  height: 100vh;
+  min-height: 100vh;
 }
 .preview-container {
   padding: 24px;
   margin: 0;
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
