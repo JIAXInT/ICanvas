@@ -13,12 +13,16 @@
         <a-layout-content class="preview-container">
           <p>画布区域</p>
           <div class="preview-list" id="canvas-area">
-            <l-text
+            <edit-wrapper
               v-for="component in components"
               :key="component.id"
-              :is="component.name"
-              v-bind="component.props"
-            ></l-text>
+              :id="component.id"
+              @setActive="setActive"
+              :active="component.id === currentElement?.id"
+            >
+              <!-- <components :is="component.name" v-bind="component.props" /> -->
+              <l-text v-bind="component.props"></l-text>
+            </edit-wrapper>
           </div>
         </a-layout-content>
       </a-layout>
@@ -28,25 +32,51 @@
         class="settings-panel"
       >
         组件属性
+        <pre>{{ currentElement?.props }}</pre>
       </a-layout-sider>
     </a-layout>
   </div>
 </template>
-<script lang="ts" setup>
-import { computed } from "vue";
+
+<script lang="ts">
+import { computed, defineComponent } from "vue";
 import { useStore } from "vuex";
-import { GlobalDataProps } from "../store";
-import LText from "../components/LText.vue";
+import { GlobalDataProps } from "../store/index";
+import { ComponentData } from "../store/editor";
+import defaultTextTemplates from "../defaultTemplates";
 import ComponentsList from "../components/ComponentsList.vue";
-import { defaultTextTemplates } from "../defaultTemplates";
-
-const store = useStore<GlobalDataProps>();
-const components = computed(() => store.state.editor.components);
-const addItem = (props: any) => {
-  store.commit("addComponent", props);
-};
+import LText from "../components/LText.vue";
+import EditWrapper from "../components/EditWrapper.vue";
+export default defineComponent({
+  components: {
+    ComponentsList,
+    LText,
+    EditWrapper,
+  },
+  setup() {
+    const store = useStore<GlobalDataProps>();
+    const components = computed(() => store.state.editor.components);
+    const currentElement = computed<ComponentData | null>(
+      () => store.getters.getCurrentElement
+    );
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const addItem = (props: any) => {
+      store.commit("addComponent", props);
+    };
+    const setActive = (id: string) => {
+      console.log(id);
+      store.commit("setActive", id);
+    };
+    return {
+      components,
+      defaultTextTemplates,
+      addItem,
+      setActive,
+      currentElement,
+    };
+  },
+});
 </script>
-
 <style>
 .editor {
   min-height: 100vh;

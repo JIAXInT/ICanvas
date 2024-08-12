@@ -11,7 +11,7 @@ export interface EditorProps {
   // 当然最后保存的时候还有一些项目信息，这里并没有写出，等做到时候再补充
 }
 
-interface ComponentData {
+export interface ComponentData {
   // 这个元素的属性，属性的详情见下面
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props: { [key: string]: any };
@@ -54,6 +54,16 @@ const editor: Module<EditorProps, GlobalDataProps> = {
         props,
       };
       state.components.push(newComponent);
+    },
+    setActive(state, currentId: string) {
+      state.currentElement = currentId;
+    },
+  },
+  getters: {
+    getCurrentElement: (state) => {
+      return state.components.find(
+        (component) => component.id === state.currentElement
+      );
     },
   },
 };
