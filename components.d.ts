@@ -30,6 +30,7 @@ declare module 'vue' {
     ATag: typeof import('ant-design-vue/es')['Tag']
     ATextarea: typeof import('ant-design-vue/es')['Textarea']
     ATooltip: typeof import('ant-design-vue/es')['Tooltip']
+    ComponentsList: typeof import('./src/components/ComponentsList.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     LText: typeof import('./src/components/LText.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
