@@ -20,18 +20,21 @@
               @setActive="setActive"
               :active="component.id === currentElement?.id"
             >
-              <!-- <components :is="component.name" v-bind="component.props" /> -->
-              <l-text v-bind="component.props"></l-text>
+              <component :is="component.name" v-bind="component.props" />
             </edit-wrapper>
           </div>
         </a-layout-content>
       </a-layout>
       <a-layout-sider
         width="300"
-        style="background: purple"
+        style="background: wheat"
         class="settings-panel"
       >
         组件属性
+        <props-table
+          v-if="currentElement && currentElement.props"
+          :props="currentElement.props"
+        />
         <pre>{{ currentElement?.props }}</pre>
       </a-layout-sider>
     </a-layout>
@@ -47,11 +50,13 @@ import defaultTextTemplates from "../defaultTemplates";
 import ComponentsList from "../components/ComponentsList.vue";
 import LText from "../components/LText.vue";
 import EditWrapper from "../components/EditWrapper.vue";
+import PropsTable from "../components/PropsTable.vue";
 export default defineComponent({
   components: {
     ComponentsList,
     LText,
     EditWrapper,
+    PropsTable,
   },
   setup() {
     const store = useStore<GlobalDataProps>();
