@@ -27,7 +27,7 @@
       </a-layout>
       <a-layout-sider
         width="300"
-        style="background: wheat"
+        style="background: white; padding: 10px"
         class="settings-panel"
       >
         组件属性

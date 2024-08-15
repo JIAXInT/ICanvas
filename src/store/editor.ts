@@ -26,7 +26,14 @@ export const testComponentds: ComponentData[] = [
   {
     id: uuidv4(),
     name: "l-text",
-    props: { text: "hello", fontSize: "20px", color: "red" },
+    props: {
+      text: "hello",
+      fontSize: "20px",
+      color: "red",
+      lineHeight: "1.5",
+      textAlign: "left",
+      fontFamily: "Arial",
+    },
   },
   { id: uuidv4(), name: "l-text", props: { text: "hello2", fontSize: "10px" } },
   {
