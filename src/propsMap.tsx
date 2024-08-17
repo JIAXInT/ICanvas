@@ -1,3 +1,4 @@
+import { h, VNode } from "vue";
 import { TextComponentProps } from "./defaultProps";
 
 export interface PropToForm {
@@ -6,7 +7,7 @@ export interface PropToForm {
   value?: string | number;
   extraProps?: { [key: string]: any };
   text: string;
-  options?: { text: string; value: any }[];
+  options?: { text: string | VNode; value: any }[];
   initalTransform?: (v: any) => any;
   afterTransform?: (v: any) => any;
   valueProp?: string;
@@ -15,6 +16,31 @@ export interface PropToForm {
 export type PropsToForms = {
   [P in keyof TextComponentProps]?: PropToForm;
 };
+
+const fontFamilyArr = [
+  { text: "宋体", value: '"SimSun","STSong"' },
+  { text: "黑体", value: '"SimHei","STHeiti"' },
+  { text: "楷体", value: '"KaiTi","STKaiti"' },
+  { text: "仿宋", value: '"FangSong","STFangsong"' },
+];
+
+// VNode写法
+// const fontFamilyOptions = fontFamilyArr.map((item) => {
+//   return {
+//     text: h("span", { style: { fontFamily: item.value } }, item.text),
+//     value: item.value,
+//   };
+// });
+
+const fontFamilyOptions = fontFamilyArr.map((item) => {
+  return {
+    value: item.value,
+    // text: (
+    //   <span style={{ fontFamily: item.value }}>{item.text}</span>
+    // ) as VNode,
+    text: h("span", { style: { fontFamily: item.value } }, item.text),
+  };
+});
 
 // 测试数据
 export const mapPropsToForms: PropsToForms = {
@@ -52,12 +78,6 @@ export const mapPropsToForms: PropsToForms = {
     component: "a-select",
     subComponent: "a-select-option",
     text: "字体",
-    options: [
-      { value: "", text: "无" },
-      { text: "宋体", value: '"SimSun","STSong"' },
-      { text: "黑体", value: '"SimHei","STHeiti"' },
-      { text: "楷体", value: '"KaiTi","STKaiti"' },
-      { text: "仿宋", value: '"FangSong","STFangsong"' },
-    ],
+    options: [{ value: "", text: "无" }, ...fontFamilyOptions],
   },
 };

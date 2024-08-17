@@ -52,6 +52,7 @@ import ComponentsList from "../components/ComponentsList.vue";
 import LText from "../components/LText.vue";
 import EditWrapper from "../components/EditWrapper.vue";
 import PropsTable from "../components/PropsTable.vue";
+// import PropsTable from "../components/PropsTableTsx";
 export default defineComponent({
   components: {
     ComponentsList,

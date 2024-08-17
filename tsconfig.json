@@ -9,6 +9,11 @@
     }
   ],
   "compilerOptions": {
+    "strict": false,
+    "noImplicitAny": false,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
     "paths": {
       "vuex": ["./node_modules/vuex/types/index.d.ts"]
     }
