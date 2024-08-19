@@ -29,7 +29,7 @@ export const testComponentds: ComponentData[] = [
     props: {
       text: "hello",
       fontSize: "20px",
-      color: "red",
+      color: "#000000",
       lineHeight: "1.5",
       textAlign: "left",
       fontFamily: "Arial",

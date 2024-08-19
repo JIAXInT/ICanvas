@@ -31,6 +31,7 @@ declare module 'vue' {
     ATag: typeof import('ant-design-vue/es')['Tag']
     ATextarea: typeof import('ant-design-vue/es')['Textarea']
     ATooltip: typeof import('ant-design-vue/es')['Tooltip']
+    ColorPicker: typeof import('./src/components/ColorPicker.vue')['default']
     ComponentsList: typeof import('./src/components/ComponentsList.vue')['default']
     EditWrapper: typeof import('./src/components/EditWrapper.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
