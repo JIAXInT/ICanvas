@@ -8,7 +8,12 @@
       />
     </div>
     <ul class="picked-color-list">
-      <li v-for="(item, key) in colors" :key="key" :class="`item-${key}`">
+      <li
+        v-for="(item, key) in colors"
+        :key="key"
+        :class="`item-${key}`"
+        @click.prevent="onChange(item)"
+      >
         <div
           :style="{ backgroundColor: item }"
           class="color-item"
@@ -97,6 +102,6 @@ export default defineComponent({
   border: 1px solid #ccc;
 }
 .transparent-back {
-  background: url("~@/assets/transparent.png") no-repeat;
+  background: url("../assets/transparent.png") no-repeat;
 }
 </style>

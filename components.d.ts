@@ -35,6 +35,7 @@ declare module 'vue' {
     ComponentsList: typeof import('./src/components/ComponentsList.vue')['default']
     EditWrapper: typeof import('./src/components/EditWrapper.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    IconSwitch: typeof import('./src/components/IconSwitch.vue')['default']
     LText: typeof import('./src/components/LText.vue')['default']
     PropsTable: typeof import('./src/components/PropsTable.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

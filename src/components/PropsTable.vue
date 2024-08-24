@@ -33,6 +33,7 @@ import { mapPropsToForms } from "../propsMap";
 import { TextComponentProps } from "../defaultProps";
 import RenderVnode from "./RenderVnode";
 import ColorPicker from "./ColorPicker.vue";
+import IconSwitch from "./IconSwitch.vue";
 interface FormProps {
   component: string;
   subComponent?: string;
@@ -56,6 +57,7 @@ export default defineComponent({
   components: {
     RenderVnode,
     ColorPicker,
+    IconSwitch,
   },
   emits: ["change"],
   setup(props, context) {

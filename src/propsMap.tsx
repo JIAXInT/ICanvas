@@ -84,4 +84,32 @@ export const mapPropsToForms: PropsToForms = {
     component: "color-picker",
     text: "字体颜色",
   },
+  fontWeight: {
+    text: "粗细",
+    component: "icon-switch",
+    initalTransform: (v: string) => v === "bold",
+    afterTransform: (e: boolean) => (e ? "bold" : "normal"),
+    valueProp: "checked",
+    extraProps: { iconName: "BoldOutlined", tip: "加粗" },
+  },
+  fontStyle: {
+    text: "斜体",
+    component: "icon-switch",
+    initalTransform: (v: string) => v === "italic",
+    afterTransform: (e: boolean) => (e ? "italic" : "normal"),
+    valueProp: "checked",
+    extraProps: { iconName: "ItalicOutlined", tip: "斜体" },
+  },
+  textDecoration: {
+    text: "下划线",
+    component: "icon-switch",
+    initalTransform: (v: string) => v === "underline",
+    afterTransform: (e: boolean) => (e ? "underline" : "none"),
+    valueProp: "checked",
+    extraProps: { iconName: "UnderlineOutlined", tip: "下划线" },
+  },
+  backgroundColor: {
+    component: "color-picker",
+    text: "背景颜色",
+  },
 };
